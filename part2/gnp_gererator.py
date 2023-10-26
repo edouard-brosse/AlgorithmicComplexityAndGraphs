@@ -1,6 +1,7 @@
 from networkx import gnp_random_graph
 import networkx as nx
 import matplotlib.pyplot as plt
+from test_matching import *
 
 def plot_graph(G: nx.Graph, graph_name: str, var: str) -> None:
     image_name = f"images/{graph_name}.pdf"
@@ -32,15 +33,7 @@ def plot_graph(G: nx.Graph, graph_name: str, var: str) -> None:
 n,p = 120, 0.04
 g = gnp_random_graph(n, p)
 plot_graph(g, f"test", f"n = {n} p = {p*100}%")
-nodeMin = None
-degMin = None
-deg = None
-for node in g.nodes():
-    deg = g.degree(node)
-    # print(f"node {node} degre {deg}")
-    if degMin is None or (deg > 0 and degMin > deg):
-        nodeMin = node
-        degMin = deg
-print(f"min {nodeMin} degre {degMin}")
-for edge in g.edges(nodeMin):
-    print(f"{edge}")
+min = test_matching_min(g.copy())
+print(f"min: {min}")
+max = test_matching_max(g.copy())
+print(f"max: {max}")
