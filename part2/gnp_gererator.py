@@ -30,10 +30,16 @@ def plot_graph(G: nx.Graph, graph_name: str, var: str) -> None:
     plt.savefig(image_name)
     plt.close()
 
-n,p = 120, 0.04
+n = 120
+p = 0.04
 g = gnp_random_graph(n, p)
-plot_graph(g, f"test", f"n = {n} p = {p*100}%")
-min = test_matching_min(g.copy())
-print(f"min: {min}")
-max = test_matching_max(g.copy())
-print(f"max: {max}")
+plot_graph(g, f"original_graph", f"n = {n} p = {p*100}%")
+
+# nx_match = nx.maximal_matching(g)
+# print(f"networkx matching: size {len(nx_match)}, {nx_match}\n")
+
+min = test_matching(g.copy(), (lambda x, y: x < y))
+print(f"min degree matching: size {len(min)}, {min}\n")
+
+max = test_matching(g.copy(), (lambda x, y: x > y))
+print(f"max degree matching: size {len(max)}, {max}")
