@@ -14,11 +14,11 @@ def cmp_deg(g, cmp: FunctionType, nodes):
 def test_matching(g, cmp: FunctionType):
     Xnode = None
     Xnode2 = None
-    match = set()
+    match = nx.Graph()
     while not nx.is_empty(g):
         Xnode = cmp_deg(g, cmp, g)
         Xnode2 = cmp_deg(g, cmp, g[Xnode])
-        match.add((Xnode, Xnode2))
+        match.add_edge(Xnode, Xnode2)
         g.remove_node(Xnode)
         g.remove_node(Xnode2)
     return match
