@@ -1,2 +1,6 @@
 degré minimum: prendre le noeud de degré minimum puis le noeud de degré minimum parmi ses voisins et ajouter l'arête au mathing
 degré maximum: prendre le noeud de degré maximum puis le noeud de degré maximum parmi ses voisins et ajouter l'arête au mathing
+
+pour trouver le noeud de degré minimum ou maximum on parcourt le graph (O(n)),
+pour trouver le noeud de degré minimum ou maximum parmi ses voisins on parcourt la liste de ses voisins (O(n), donc O(2n) pour les 2 instructions)
+puis, on recommence jusqu'à ce que le matching soit maximal (une boucle par arête soit O(n/2), donc O(n^2) pour le tout)
