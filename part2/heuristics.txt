@@ -1,2 +1,2 @@
-degré minimum: prendre le noeud de degré minimum puis le noeud de degré minimum parmi ses voisins
-degré maximum: prendre le noeud de degré maximum puis le noeud de degré maximum parmi ses voisins
+degré minimum: prendre le noeud de degré minimum puis le noeud de degré minimum parmi ses voisins et ajouter l'arête au mathing
+degré maximum: prendre le noeud de degré maximum puis le noeud de degré maximum parmi ses voisins et ajouter l'arête au mathing
