@@ -1,18 +1,19 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
+
 def plot_graph(G: nx.Graph, graph_name: str, var: str) -> None:
-    image_name = f"images/{graph_name}.pdf"
+    image_name = f"{graph_name}.pdf"
     plt.title(f"{graph_name}\n{var}")
     # visualize the graph
     # choose colors
-    node_color="#b6cef2"
-    edge_color="#1b50a1"
+    node_color = "#b6cef2"
+    edge_color = "#1b50a1"
     # we give a seed to the layout engine
     # in order to always have the same layout
     # fot a given  graph.
     # Otherwise, a random seed is used.
-    pos=nx.spring_layout(G, seed=1)
+    pos = nx.spring_layout(G, seed=1)
     # pos=nx.spring_layout(G)
     # if you prefer a circular layout
     # pos=nx.circular_layout(G)
